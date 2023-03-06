@@ -17,7 +17,9 @@
 pipeline {
         agent { docker { image 'maven:3.9.0'  } }
         stages {
-        environment{HOME ="."}
+        environment {
+                 HOME ="."
+        }
             stage('build') {
                                steps {
                     bat 'mvn --version'
