@@ -15,16 +15,15 @@
 // }
 //
 pipeline {
-        agent { docker { image 'maven:3.9.0'  } }
+        agent { docker { image 'maven:3.9.0' } }
         stages {
-        environment {
-                 HOME ="."
-        }
             stage('build') {
-                               steps {
+                environment {
+                  HOME="."
+                }
+                steps {
                     bat 'mvn --version'
                 }
            }
         }
-
     }
