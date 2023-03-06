@@ -15,14 +15,14 @@
 // }
 //
 pipeline {
-        agent { label 'linux'}
+        agent {docker { image 'maven:3.9.0-eclipse-temurin-11' }}
         stages {
             stage('build') {
                 environment {
                   HOME="."
                 }
                 steps {
-                    sh 'mvn --version'
+                    bat 'mvn --version'
                 }
            }
         }
